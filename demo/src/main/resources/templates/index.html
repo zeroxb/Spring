@@ -1,20 +1,35 @@
 <html xmlns:th="http://www.thymeleaf.com">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <H1>INICIO</H1>
-        <p th:text="${mensaje}"></p>
-        <p th:text="${saludo}"></p>
-        <br/>
-        Nombre : <span th:text="${persona.nombre}">Mostrar Nombre</span>
-        <br>
-        Apellido : <span th:text="${persona.apellido}">Mostrar Apellido</span>
-        <br>   
-        E-mail : <span th:text="${persona.email}">Mostrar E-mail</span>
-        <br>
-        Teléfono : <span th:text="${persona.telefono}">Mostrar Telefono</span>
 
-    </body>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <H1>INICIO</H1>
+    <p th:text="${mensaje}"></p>
+    <p th:text="${saludo}"></p>
+    <br />
+    <br>
+    <div th:if="${personas != null and !personas.empty}">
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+
+            <tr th:each="persona : ${personas}">
+                <td th:text="${persona.nombre}">Mostrar Nombre</td>
+                <td th:text="${persona.apellido}">Mostrar Apellido</td>
+                <td th:text="${persona.email}">Mostrar E-mail</td>
+                <td th:text="${persona.telefono}">Mostrar Telefono</td>
+            </tr>
+        </table>
+    </div>
+    <div th:if="${personas == null or personas.empty}">
+        La lista de personas esta vacía
+    </div>
+</body>
 </html>
