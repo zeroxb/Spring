@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HolaSpringApplication",
+            "request": "launch",
+            "mainClass": "mx.com.gm.HolaSpringApplication"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": "demo",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HolaSpringApplication<HolaMundoSpringData>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.gm.HolaSpringApplication",
+            "projectName": "HolaMundoSpringData",
+            "args": ""
+        }
+    ]
+}
