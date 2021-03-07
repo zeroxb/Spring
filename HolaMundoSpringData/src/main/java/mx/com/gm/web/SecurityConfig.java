@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+   protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.inMemoryAuthentication().withUser("admin")
         .password("{noop}RootmasterAdmin")
         .roles("ADMIN","USER")
