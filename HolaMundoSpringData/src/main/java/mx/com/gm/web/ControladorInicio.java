@@ -36,7 +36,6 @@ public class ControladorInicio {
         log.info("ejecutando el controlador Spring MVC");
         log.info("Nombre:"+ user);
         model.addAttribute("personas", personas);
-        model.addAttribute("Usuario", user);
         return "index";
     }
 
