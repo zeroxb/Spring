@@ -2,6 +2,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch EncriptarPassword",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mx.com.gm.util.EncriptarPassword",
+            "projectName": "HolaMundoSpringData",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - HolaSpringApplication",
             "request": "launch",
             "mainClass": "mx.com.gm.HolaSpringApplication"
