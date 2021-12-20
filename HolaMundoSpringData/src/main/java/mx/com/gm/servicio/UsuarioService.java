@@ -14,6 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 import lombok.extern.slf4j.Slf4j;
 import mx.com.gm.domain.*;
 import mx.com.gm.dao.UsuarioDao;
@@ -29,7 +31,8 @@ public class UsuarioService implements UserDetailsService{
     @Override
     @Transactional(readOnly=true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario usuario = usuarioDao.findByUserName(username);
+        Usuario usuario = usuarioDao.findByUsername(username);     
+       
         if (usuario == null) {
             throw new UsernameNotFoundException(username);
         } else {

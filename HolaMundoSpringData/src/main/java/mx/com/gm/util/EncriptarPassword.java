@@ -9,6 +9,7 @@ public class EncriptarPassword {
    public static void main(String[]args){
         
         var password = "RootmasterUser";
+        //RootmasterAdmin
         var passwordEncriptado = encriptarPassword(password);
         System.out.println("Password : " + password);
         System.out.println("Password Encriptado : " + passwordEncriptado);

@@ -8,6 +8,6 @@ public class HolaSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HolaSpringApplication.class, args);
-		System.out.println("Arranco la Aplicación :) ");
+		System.out.println("__Arranco la Aplicación :) ");
 	}
 }

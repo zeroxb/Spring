@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -27,6 +28,9 @@ public class Persona implements Serializable{
     private String email;
     
     private String telefono;
+    
+    @NotNull
+    private double saldo;
 
     public Persona() {
     }
@@ -62,17 +66,24 @@ public class Persona implements Serializable{
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    public Persona(Long idPersona, String nombre, String apellido, String email, String telefono) {
+    public Double getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(Double saldo) {
+        this.saldo = saldo;
+    }
+    public Persona(Long idPersona, String nombre, String apellido, String email, String telefono, Double saldo) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
+        this.saldo = saldo;
     }
 
     @Override
     public String toString() {
         return "Persona [apellido=" + apellido + ", email=" + email + ", idPersona=" + idPersona + ", nombre=" + nombre
-                + ", telefono=" + telefono + "]";
+                + ", telefono=" + telefono + ", saldo=" + saldo + "]";
     }
 }

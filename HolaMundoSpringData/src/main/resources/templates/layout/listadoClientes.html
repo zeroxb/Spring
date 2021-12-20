@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+
+<title>Listado Clientes</title>
+</head>
+<body>
+	<section th:fragment="listadoClientes" id="clientes">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="card">
+						<div class="card-header">
+							<h4>[[#{persona.titulo-lista}]]</h4>
+						</div>
+						<div th:if="${personas != null and !personas.empty}">
+							<table class="table table-stryped">
+								<thead class="thead-dark">
+									<tr>
+										<th>#</th>
+										<th th:text="#{persona.nombre}">Mostrar Nombre</th>
+										<th th:text="#{persona.saldo}">Mostrar Saldo</th>
+
+									</tr>
+								</thead>
+								<tbody class="tbody-dark">
+									<tr th:each="persona : ${personas}">
+										<td th:text="${persona.nombre}">Mostrar Nombre</td>
+										<td th:text="${persona.apellido}">Mostrar Apellido</td>
+										<td th:text="${persona.email}">Mostrar Email</td>
+										<td th:text="${persona.telefono}">Mostrar Teléfono</td>
+										<td sec:authorize="hasRole('ROLE_ADMIN')"><a
+											th:href="@{/editar/}+${persona.idPersona}"
+											th:text="#{accion.editar}" /></td>
+										<td sec:authorize="hasRole('ROLE_ADMIN')"><a
+											th:href="@{/eliminar(idPersona=${persona.idPersona})}"
+											th:text="#{accion.eliminar}" /></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
